@@ -1,0 +1,15 @@
+name: "Memcached actions"
+description: "Run your Memcached cluster"
+branding:
+  icon: circle
+  color: black
+inputs: 
+  ports:
+    description: "Configuration of your cluster"
+    required: false
+    default: '11211'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.ports }}
